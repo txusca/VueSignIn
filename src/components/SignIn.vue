@@ -41,6 +41,11 @@ const handleEmail = async () => {
     errorMessage.value = 'Email is required'
     return
   }
+  const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
+  if (!emailRegex.test(email.value)) {
+    errorMessage.value = 'Invalid email format'
+    return
+  }
   emailChosen.value = true
   errorMessage.value = null
   if (password.value && email.value) {
@@ -50,7 +55,6 @@ const handleEmail = async () => {
 
 const fetchLogin = async () => {
   try {
-
     const response = await fetch(`http://localhost:5248/api/Auth/login`, {
       method: 'POST',
       headers: {
