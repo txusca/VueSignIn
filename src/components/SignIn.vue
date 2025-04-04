@@ -1,6 +1,7 @@
 <template>
   <div
-    class="container max-w-md pt-2 flex items-center justify-center flex-col p-4 shadow-md mx-auto gap-4 text-center">
+    class="container max-w-md pt-2 flex items-center justify-center flex-col p-4 shadow-md mx-auto gap-4 text-center"
+  >
     <div class="w-full flex items-start">
       <div class="bg-gray-200 p-4 rounded-full">
         <DoorOpen :size="60" class="text-gray-400" />
@@ -10,11 +11,24 @@
     <p>Please sign in or sign up below.</p>
     <div class="flex flex-col gap-2 w-full">
       <label for="email" class="text-left">Email</label>
-      <input v-model="email" placeholder="you@mail.com" type="email" name="email" id="email"
-        class="border p-2 rounded placeholder:pl-2" />
+      <input
+        v-model="email"
+        placeholder="you@mail.com"
+        type="email"
+        name="email"
+        id="email"
+        class="border p-2 rounded placeholder:pl-2"
+      />
       <label v-if="emailChosen" for="password" class="text-left">Password</label>
-      <input v-if="emailChosen" v-model="password" placeholder="Password" type="password" name="password" id="password"
-        class="border p-2 rounded placeholder:pl-2" />
+      <input
+        v-if="emailChosen"
+        v-model="password"
+        placeholder="Password"
+        type="password"
+        name="password"
+        id="password"
+        class="border p-2 rounded placeholder:pl-2"
+      />
       <button @click.prevent="handleEmail" class="bg-blue-500 text-white p-2 rounded">
         Continue with Email
       </button>
