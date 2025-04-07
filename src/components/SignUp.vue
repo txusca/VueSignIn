@@ -29,8 +29,8 @@
             Sign Up
           </button>
         </form>
-        <ul v-if="errorMessage.length" class="mt-4">
-          <li v-for="(error, index) in errorMessage" :key="index" class="text-red-500 text-sm error-message">
+        <ul v-for="(error, index) in errorMessage" :key="index" class="mt-4">
+          <li class="text-red-500 text-sm .error-message">
             {{ error.description }}
           </li>
         </ul>
@@ -69,8 +69,7 @@ const validatePassword = () => {
     },
     {
       regex: /[@$!%*?&#]/,
-      description:
-        'Passwords must contain at least one special character (@, $, !, %, *, ?, &, #).',
+      description: 'Passwords must contain at least one special character (@, $, !, %, *, ?, &, #).',
     },
   ]
 
